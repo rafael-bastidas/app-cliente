@@ -1,0 +1,44 @@
+<h2>FORMULARIO DE REGISTRO</h2>
+
+<div class="px-2" [formGroup]="formRegister">
+  <p class="mt-5">Información del propietario</p>
+  <div class="ps-3 mb-3 row">
+    <label for="inputNCompleto" class="col-sm-2 col-form-label">N° Apto</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputNCompleto" formControlName="inputNApto">
+    </div>
+  </div>
+  <div class="ps-3 mb-3 row">
+    <label for="inputNCompleto" class="col-sm-2 col-form-label">Nombre Completo</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputNCompleto" formControlName="inputNCompleto">
+    </div>
+  </div>
+  <div class="ps-3 mb-3 row">
+    <label for="inputDIdentificacion" class="col-sm-2 col-form-label">Doc. Identificación</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputDIdentificacion" formControlName="inputDIdentificacion">
+    </div>
+  </div>
+  <div class="ps-3 mb-3 row">
+    <label for="inputTelefono2" class="col-sm-2 col-form-label">Teléfono</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputTelefono2" formControlName="inputTelefono2">
+    </div>
+  </div>
+  <div class="ps-3 mb-3 row">
+    <label for="inputCorreo" class="col-sm-2 col-form-label">Correo</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputCorreo" formControlName="inputCorreo">
+    </div>
+  </div>
+  <div class="ps-3 mb-3 row">
+    <label for="inputContasena" class="col-sm-2 col-form-label">Contaseña</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputContasena" formControlName="inputContasena">
+    </div>
+  </div>
+  <div class="mb-5 text-center">
+    <button class="btn btn-primary" (click)="showSuccess()">REGISTRARME</button>
+  </div>
+</div>

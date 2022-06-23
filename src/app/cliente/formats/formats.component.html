@@ -1,0 +1,67 @@
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">1. Descargue la solicitud de formato.</h2>
+        <div class="px-3">
+            <select class="form-select mb-2" aria-label="Tipos de formatos">
+                <option selected>Seleccione un formato</option>
+                <option value="1"><i class="fa-solid fa-file-arrow-down"></i> Mudanza</option>
+                <option value="2"><i class="fa-solid fa-file-arrow-down"></i> Constancia de residencia</option>
+            </select>
+            <p style="text-align: justify;">
+                <b>Descripción:</b> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex modi omnis quasi laboriosam quo iusto odit quis laudantium excepturi architecto quidem dicta, cupiditate fuga quam. Voluptates quisquam labore mollitia modi?
+            </p>
+        </div>
+    </div>
+    <div class="col-12">
+        <h2 class="mb-3">2. Rellene los datos solicitados.</h2>
+        <div class="px-3">
+            <p style="text-align: justify;">
+                Una vez descargado el formato deseado, debe rellenar los datos solicitados segun corresponda.
+            </p>
+        </div>
+    </div>
+    <div class="col-12">
+        <h2 class="mb-3">2. Suba su solicitud de formato.</h2>
+        <div class="px-3">
+            <input class="form-control" type="file" id="formFile">
+        </div>
+    </div>
+    <div class="col-12 text-center">
+        <button class="btn btn-success mt-3" (click)="showSuccess()">SUBIR PETICIÓN</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h2>Lista de Solicitudes</h2>
+        <div class="px-3">
+            <table class="table table-success table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tipo de formato</th>
+                    <th scope="col">Fecha Solicitud</th>
+                    <th scope="col">Fecha Aprobación</th>
+                    <th scope="col">Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Constancia de residencia</td>
+                    <td>04-06-2022</td>
+                    <td>15-06-2022</td>
+                    <td>Aprobado</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mudanza</td>
+                    <td>04-06-2022</td>
+                    <td>-</td>
+                    <td>En revisión</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

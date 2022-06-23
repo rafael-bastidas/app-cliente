@@ -1,0 +1,142 @@
+<div class="row pb-5">
+    <div class="col-md-8">
+        <div class="d-block mb-3 bg-info p-5">
+            <h4>DEUDA PENDIENTE</h4>
+            <table class="table table-success table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Descipción</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Cuota</th>
+                    <th scope="col">Deuda</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Pago</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                        <input class="form-check-input" type="checkbox" value="" id="ckeck1" disabled>
+                    </th>
+                    <th>Cuota Ord.</th>
+                    <td>05-Jun 2022</td>
+                    <td>38.50</td>
+                    <td>12.00</td>
+                    <td>Revisión</td>
+                    <td>
+                        <input type="text" disabled>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                        <input class="form-check-input" type="checkbox" value="" id="ckeck2">
+                    </th>
+                    <th>Cuota Ord.</th>
+                    <td>05-Jul 2022</td>
+                    <td>38.50</td>
+                    <td>12.00</td>
+                    <td>Impaga</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="row mb-4">
+            <div class="col-md-8 fw-bold text-decoration-underline">
+                MONTO
+            </div>
+            <div class="col-md-4">
+                <div class="btn-group">
+                    <a class="btn btn-primary">$</a>
+                    <a class="btn btn-primary">Bs</a>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3" style="background-color: #239653;">
+                <h4>$/Bs</h4>
+            </div>
+            <div class="col-md-9" style="background-color: #239653c2;">
+                <p class="text-end">Tasa BCV (16-06-2022)</p>
+                <p class="text-end">4,50 Bs</p>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3" style="background-color: #236896;">
+                <h4>$/Bs</h4>
+            </div>
+            <div class="col-md-9" style="background-color: #236896c2;">
+                <p class="text-end">Total a pagar</p>
+                <p class="text-end">4,50 Bs</p>
+            </div>
+        </div>
+
+        <div class="text-end">
+            <button class="btn btn-success" (click)="showSuccess()">ENVIAR PAGO</button>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="row">
+                    <label for="inputFechaPago" class="col-sm-2 col-form-label">Fecha pago</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputFechaPago">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <label for="inputFormaPago" class="col-sm-2 col-form-label">Forma pago</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputFormaPago">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <label for="inputReferencia" class="col-sm-2 col-form-label">Nro. Ref.</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputReferencia">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="row">
+                    <label for="inputBOrigen" class="col-sm-2 col-form-label">Banco Origen</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputBOrigen">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <label for="inputBDestino" class="col-sm-2 col-form-label">Banco Destino</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputBDestino">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="inputCaptura" class="form-label">Captura</label>
+                    <input class="form-control" type="file" id="inputCaptura">
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="inputObservacion" class="col-sm-2 col-form-label">Observación</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputObservacion">
+            </div>
+        </div>
+    </div>
+</div>

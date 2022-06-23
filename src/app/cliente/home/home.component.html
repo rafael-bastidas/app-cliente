@@ -1,0 +1,49 @@
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-info sticky-top">
+        <div class="container-fluid">
+            <img width="10%" alt="ATP Logo"
+                src="https://atpendocrina.com/image-atp/cropped-cropped-LOGO-atpe-150x66.png" />
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="btn nav-link" (click)="selectHome()">INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn nav-link">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn nav-link">CONTACTO</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid bg-info py-5" *ngIf="infoHeadHomeuser == undefined">
+        <h4 class="text-center">GESTION DE CONDOMINIOS</h4>
+        <p class="text-center">Sistema web de administración de condominios</p>
+    </div>
+    <div class="container-fluid bg-info py-5" *ngIf="infoHeadHomeuser != undefined">
+        <h4 class="text-center">{{infoHeadHomeuser.nombre_condominio}}</h4>
+        <p class="text-center">{{infoHeadHomeuser.nombre_propietario}}</p>
+    </div>
+</header>
+
+<main class="flex-shrink-0">
+    <div class="container mt-5">
+      <router-outlet></router-outlet>
+    </div>
+</main>
+
+<footer class="footer bg-info mt-auto py-3">
+    <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+    </div>
+</footer>
+
+<ngx-spinner type="ball-scale-multiple"><p style="color: white"> Loading... </p></ngx-spinner>
