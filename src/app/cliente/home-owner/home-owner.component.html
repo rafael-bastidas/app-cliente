@@ -17,13 +17,18 @@
                         Rendición de cuentas
                     </a>
                 </li>
+                <li>
+                  <a class="btn btn-outline-success" routerLink="../configurations">
+                      Detalle de cuenta
+                  </a>
+              </li>
             </ul>
         </div>
     </div>
     <div class="col-md-4">
         <div class="row mb-4">
             <div class="col-md-8 fw-bold">
-                SALDO
+                Balance actual
             </div>
             <div class="col-md-4">
                 <div class="btn-group">
@@ -46,40 +51,14 @@
                 <h4>$/Bs</h4>
             </div>
             <div class="col-md-9" style="background-color: #3b8bc0b9;">
-                <p class="text-end">Deuda ordinaria</p>
-                <p class="text-end">4,50 Bs</p>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-3" style="background-color: #2a7a99;">
-                <h4>$/Bs</h4>
-            </div>
-            <div class="col-md-9" style="background-color: #2a7a99c0;">
-                <p class="text-end">Deuda especial</p>
-                <p class="text-end">4,50 Bs</p>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-3" style="background-color: #dabc38;">
-                <h4>$/Bs</h4>
-            </div>
-            <div class="col-md-9" style="background-color: #dabc38be;">
-                <p class="text-end">Deuda interes</p>
-                <p class="text-end">4,50 Bs</p>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-3" style="background-color: #b84326;">
-                <h4>$/Bs</h4>
-            </div>
-            <div class="col-md-9" style="background-color: #b84326b9;">
-                <p class="text-end">Deuda total</p>
+                <p class="text-end">Balance actual</p>
                 <p class="text-end">4,50 Bs</p>
             </div>
         </div>
 
         <div class="text-end">
-            <button class="btn btn-success" routerLink="/payments">PAGAR FACTURA</button>
+            <button class="btn btn-warning" routerLink="../history-user">HISTORICO DE ACTIVIDADES</button>
+            <button class="btn btn-success ms-2" routerLink="../payments">REPORTAR PAGO</button>
         </div>
     </div>
 </div>
@@ -129,7 +108,7 @@
   </div>
 </div>
 
-<!-- Modal LISTO DE MOROSOS -->
+<!-- Modal LISTO DE CUENTAS -->
 <div class="modal fade" id="modalListadoCuentas" tabindex="-1" aria-labelledby="modalListadoCuentas" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">

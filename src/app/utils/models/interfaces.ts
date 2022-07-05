@@ -1,11 +1,14 @@
 export interface TInfoCondominio {
     id: number,
     codigo_condominio: string,
-    nombre: string,
+    nombre_condominio: string,
     direccion: string,
     rif: string,
     boleta_informativa: string,
-    total_aptos: number
+    total_aptos: number,
+    correo: string,
+    telefono: string,
+    rrss: string
 }
 
 export interface TResponseBackend {
@@ -14,9 +17,7 @@ export interface TResponseBackend {
     data: any
 }
 
-export interface THeadHomeUser {
-    nombre_condominio: string,
-    apto: string,
-    nombre_propietario: string,
-    direccion_condominio: string
+export interface TInfoHomeUser extends TInfoCondominio {
+    nombre_usuario: string,
+    nro_apto: string
 }

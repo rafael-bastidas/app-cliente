@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './cliente/about/about.component';
 import { ConfigurationComponent } from './cliente/configuration/configuration.component';
 import { FormatsComponent } from './cliente/formats/formats.component';
+import { HistoryUserComponent } from './cliente/history-user/history-user.component';
 import { HomeInitComponent } from './cliente/home-init/home-init.component';
 import { HomeOwnerComponent } from './cliente/home-owner/home-owner.component';
 import { HomeComponent } from './cliente/home/home.component';
@@ -25,6 +27,8 @@ const routes: Routes = [
       { path: ':id/payments', component: PaymentsComponent },
       { path: ':id/formats', component: FormatsComponent },
       { path: ':id/configurations', component: ConfigurationComponent },
+      { path: ':id/about', component: AboutComponent },
+      { path: ':id/history-user', component: HistoryUserComponent },
     ]
   },
   { path: '**', component: HomeComponent },

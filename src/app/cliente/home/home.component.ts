@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterState } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IntercomService } from 'src/app/servicios/itercom.service';
-import { THeadHomeUser } from 'src/app/utils/models/interfaces';
+import { TInfoHomeUser } from 'src/app/utils/models/interfaces';
 
 @Component({
   selector: 'app-home',
@@ -12,13 +12,13 @@ import { THeadHomeUser } from 'src/app/utils/models/interfaces';
 export class HomeComponent implements OnInit {
 
   suscritions: Subscription[] = []
-  infoHeadHomeuser: THeadHomeUser | undefined
+  infoCond: TInfoHomeUser | undefined
 
   constructor(private router: Router, private intercom: IntercomService) { }
 
   ngOnInit(): void {
     this.suscritions[0] = this.intercom.itemHeadHomeUser$.subscribe(item => {
-      this.infoHeadHomeuser = item;
+      this.infoCond = item;
     })
   }
 
@@ -29,6 +29,13 @@ export class HomeComponent implements OnInit {
     } else {
       this.router.navigate([urlCurrent.split("/")[1].concat("/home-owner")])
     }
+  }
+
+  closeSession(){
+    localStorage.removeItem("tokenUser")
+    let urlCurrent = this.router.routerState.snapshot.url;
+    this.router.navigate([urlCurrent.split("/")[1].concat("/login")])
+    //Falta ir a base de datos y borrar token
   }
 
 }

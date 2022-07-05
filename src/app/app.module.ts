@@ -20,6 +20,8 @@ import { ConfigurationComponent } from './cliente/configuration/configuration.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GenericService } from './servicios/generic.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AboutComponent } from './cliente/about/about.component';
+import { HistoryUserComponent } from './cliente/history-user/history-user.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeOwnerComponent,
     PaymentsComponent,
     FormatsComponent,
-    ConfigurationComponent
+    ConfigurationComponent,
+    AboutComponent,
+    HistoryUserComponent
   ],
   imports: [
     BrowserModule,

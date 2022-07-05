@@ -1,8 +1,15 @@
 <div class="row mb-5">
     <div class="col-md-6 align-self-center bg-info py-5">
         <div>
-            <h4 class="text-center">{{infoCond?.nombre}}, RIF. {{infoCond?.rif}}</h4>
-            <p class="text-center">{{infoCond?.direccion}}</p>
+            <h4 class="text-center">Condominio residencial {{infoCond?.nombre_condominio}}</h4>
+            <h6 class="text-center">RIF. {{infoCond?.rif}}</h6>
+            <p class="text-center mb-0">{{infoCond?.direccion}}</p>
+            <p class="text-center mb-0">Correo electronico: {{infoCond?.correo}}</p>
+            <p class="text-center mb-0">Teléfono: {{infoCond?.telefono}}</p>
+            <p class="text-center">Red Social: <a [href]="infoCond?.rrss" target="_blank">{{infoCond?.nombre_condominio}}</a></p>
+        </div>
+        <div class="text-end">
+            <button class="btn btn-warning" routerLink="../about">Conocer más</button>
         </div>
     </div>
     <div class="col-md-6" [formGroup]="formLogin">

@@ -5,6 +5,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { GenericService } from 'src/app/servicios/generic.service';
+import { IntercomService } from 'src/app/servicios/itercom.service';
 import { TInfoCondominio } from 'src/app/utils/models/interfaces';
 
 @Component({
@@ -18,17 +19,19 @@ export class LoginComponent implements OnInit {
   
   formLogin: FormGroup = new FormGroup({
     inputUsuario: new FormControl('', Validators.required),
-    inputClave: new FormControl('', Validators.required)
+    inputClave: new FormControl('', Validators.required),
+    codigoCondominio: new FormControl('', Validators.required)
   })
 
   infoCond: TInfoCondominio | undefined
 
   constructor(private router: Router, private activateRoute: ActivatedRoute, private toastr: ToastrService,
-    private spinner: NgxSpinnerService, private connectHttp: GenericService) { }
+    private spinner: NgxSpinnerService, private connectHttp: GenericService, private intercom: IntercomService) { }
 
   ngOnInit(): void {
-    this.formLogin.get('CODIGO_CONDOMINIO')?.setValue(this.activateRoute.snapshot.paramMap.get('id'))
+    this.formLogin.get('codigoCondominio')?.setValue(this.activateRoute.snapshot.paramMap.get('id'))
     this.loadInfoCond(this.activateRoute.snapshot.paramMap.get('id'))
+    this.intercom.announceHeadHomeUser(undefined)
   }
 
   loadInfoCond(code:string|null){
