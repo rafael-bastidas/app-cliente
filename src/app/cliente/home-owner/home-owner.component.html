@@ -1,72 +1,103 @@
 <div class="row pb-5">
-    <div class="col-md-8">
-        <div class="d-block mb-3 bg-info p-5">
-            <h4>CARTELERA INFORMATIVA</h4>
-            <p>{{infoCartelera}}</p>
-        </div>
-        <div class="d-block">
-            <h6>Enlaces de interes:</h6>
-            <ul>
-                <li>
-                    <a class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalListadoMorosos">
-                        Listado de morosos
-                    </a>
-                </li>
-                <li>
-                    <a class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalListadoCuentas">
-                        Rendición de cuentas
-                    </a>
-                </li>
-                <li>
-                  <a class="btn btn-outline-success" routerLink="../configurations">
-                      Detalle de cuenta
-                  </a>
-              </li>
-            </ul>
-        </div>
+  <div class="col-md-8">
+    <div class="d-block mb-3 bg-info p-5">
+      <h4>CARTELERA INFORMATIVA</h4>
+      <p [innerHTML]="infoCartelera"></p>
+      <a class="btn btn-outline-success w-100 mb-3" href="../../../../assets/normas.pdf" target="_blank">Normas del condominio</a>
+      <div class="table-responsive">
+        <table class="table table-success table-striped table-hover">
+          <thead>
+            <tr>
+              <th colspan="7" class="text-center bg-success">Programa de actividades del condominio</th>
+            </tr>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Fecha Sol.</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Fecha Inicio</th>
+              <th scope="col">Fecha Fin</th>
+              <th scope="col">Comentario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <th scope="row">23-06-2022</th>
+              <td>Actividad en el piso 4 apto A</td>
+              <td>Mudanza Entrada</td>
+              <td>23-07-2022</td>
+              <td>24-07-2022</td>
+              <td>Se les prohibio el uso del ascensor en horarios de comida</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <div class="col-md-4">
-        <div class="row mb-4">
-            <div class="col-md-8 fw-bold">
-                Balance actual
-            </div>
-            <div class="col-md-4">
-                <div class="btn-group">
-                    <a class="btn btn-primary">$</a>
-                    <a class="btn btn-primary">Bs</a>
-                </div>
-            </div>
+    <div class="d-block">
+      <h6>Enlaces de interes:</h6>
+      <ul>
+        <li>
+          <a class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalListadoMorosos">
+            Listado de morosos
+          </a>
+        </li>
+        <li>
+          <a class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalListadoCuentas">
+            Rendición de cuentas
+          </a>
+        </li>
+        <li>
+          <a class="btn btn-outline-success" routerLink="../configurations">
+            Detalle de cuenta
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="row mb-4">
+      <div class="col-md-8 fw-bold">
+        Balance actual
+      </div>
+      <div class="col-md-4">
+        <div class="btn-group">
+          <a class="btn btn-primary">$</a>
+          <a class="btn btn-primary">Bs</a>
         </div>
-        <div class="row mb-3">
-            <div class="col-md-3" style="background-color: #239653;">
-                <h4>$/Bs</h4>
-            </div>
-            <div class="col-md-9" style="background-color: #239653c2;">
-                <p class="text-end">Tasa BCV (16-06-2022)</p>
-                <p class="text-end">4,50 Bs</p>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-3" style="background-color: #3b8bc0;">
-                <h4>$/Bs</h4>
-            </div>
-            <div class="col-md-9" style="background-color: #3b8bc0b9;">
-                <p class="text-end">Balance actual</p>
-                <p class="text-end">4,50 Bs</p>
-            </div>
-        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-3" style="background-color: #239653;">
+        <h4>$/Bs</h4>
+      </div>
+      <div class="col-md-9" style="background-color: #239653c2;">
+        <p class="text-end">Tasa BCV (16-06-2022)</p>
+        <p class="text-end">4,50 Bs</p>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-3" style="background-color: #3b8bc0;">
+        <h4>$/Bs</h4>
+      </div>
+      <div class="col-md-9" style="background-color: #3b8bc0b9;">
+        <p class="text-end">Balance actual</p>
+        <p class="text-end">4,50 Bs</p>
+      </div>
+    </div>
 
-        <div class="text-end">
-            <button class="btn btn-warning" routerLink="../history-user">HISTORICO DE ACTIVIDADES</button>
-            <button class="btn btn-success ms-2" routerLink="../payments">REPORTAR PAGO</button>
-        </div>
+    <div class="text-end">
+      <button class="btn btn-warning" routerLink="../history-user">HISTORICO DE ACTIVIDADES</button>
+      <button class="btn btn-success ms-2" routerLink="../payments">REPORTAR PAGO</button>
     </div>
+  </div>
 </div>
 
 
 
 <!-- Modal LISTO DE MOROSOS -->
-<div class="modal fade" id="modalListadoMorosos" tabindex="-1" aria-labelledby="modalListadoMorososLabel" aria-hidden="true">
+<div class="modal fade" id="modalListadoMorosos" tabindex="-1" aria-labelledby="modalListadoMorososLabel"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
@@ -74,30 +105,30 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        
+
         <table class="table table-success table-striped table-hover">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Apartamento</th>
-                <th scope="col">Cuotas pendientes</th>
-                <th scope="col">Monto</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>4-A</td>
-                <td>2</td>
-                <td><b>Bs.</b> 340.00</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>3-C</td>
-                <td>8</td>
-                <td><b>Bs.</b> 1640.00</td>
-              </tr>
-            </tbody>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Apartamento</th>
+              <th scope="col">Cuotas pendientes</th>
+              <th scope="col">Monto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>4-A</td>
+              <td>2</td>
+              <td><b>Bs.</b> 340.00</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>3-C</td>
+              <td>8</td>
+              <td><b>Bs.</b> 1640.00</td>
+            </tr>
+          </tbody>
         </table>
 
       </div>
@@ -110,43 +141,91 @@
 
 <!-- Modal LISTO DE CUENTAS -->
 <div class="modal fade" id="modalListadoCuentas" tabindex="-1" aria-labelledby="modalListadoCuentas" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalListadoCuentas">LISTADO DE MOROSOS</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          
-          <table class="table table-success table-striped table-hover">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Clasificación</th>
-                  <th scope="col">Tipo de gasto</th>
-                  <th scope="col">Descripción</th>
-                  <th scope="col">Monto</th>
-                  <th scope="col">Couta</th>
-                  <th scope="col">Factura</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Cuota ordinaria</td>
-                  <td>Serv. luz</td>
-                  <td>Pago de Servicios</td>
-                  <td><b>Bs.</b> 134.00</td>
-                  <td><b>Bs.</b> 23</td>
-                  <td><i class="fa-solid fa-2x fa-file-arrow-down"></i></td>
-                </tr>
-              </tbody>
-          </table>
-  
-        </div>
-        <!-- <div class="modal-footer">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalListadoCuentas">INFORMACIÓN DE REALCIÓN DE GASTOS</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <table class="table table-success table-striped table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Clasificación</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Monto</th>
+              <th scope="col">Couta</th>
+              <th scope="col">Factura</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <th scope="row">23-06-2022</th>
+              <td>Cuota ordinaria</td>
+              <td>Serv. luz</td>
+              <td>Pago de Servicios</td>
+              <td><b>Bs.</b> 134.00</td>
+              <td><b>Bs.</b> 23</td>
+              <td><i class="fa-solid fa-2x fa-file-arrow-down"></i></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <!-- <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"></button>
         </div> -->
-      </div>
     </div>
+  </div>
 </div>
+
+
+<!-- FORMATO HTML DE LA CARTELERA
+<div class="row g-4">
+  <div class="col-12">
+    <h6>Información general</h6>
+    <ol class="list-group list-group-numbered">
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">Queja No. 22</div>
+          Se va a recoger firmas para sacar a maduro.
+        </div>
+        <span class="badge bg-primary rounded-pill">Publicado: 14-06-2022</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">Servicios</div>
+          Se va el agia mañana y pasado tambien.
+        </div>
+        <span class="badge bg-primary rounded-pill">Publicado: 14-06-2022</span>
+      </li>
+    </ol>
+  </div>
+  <div class="col-12">
+    <h6>Solicitudes de mudanza</h6>
+    <ol class="list-group list-group-numbered">
+      <li class="list-group-item">Fecha de solicitud: 01-07-2022, Apto: 4A</li>
+      <li class="list-group-item">Fecha de solicitud: 05-07-2022, Apto: 4B</li>
+    </ol>
+  </div>
+  <div class="col-12">
+    <h6>Solicitudes de trabajos</h6>
+    <ol class="list-group list-group-numbered">
+      <li class="list-group-item">Fecha de solicitud: 01-07-2022, Apto: 4A</li>
+      <li class="list-group-item">Fecha de solicitud: 05-07-2022, Apto: 4B</li>
+      <li class="list-group-item">Fecha de solicitud: 05-07-2022, Area de jardineria</li>
+    </ol>
+  </div>
+  <div class="col-12">
+    <h6>Información de cuentas bancarias del condominio</h6>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Banco del pobre. Cuenta corriente No 1234567890000</li>
+      <li class="list-group-item">Banco del Rico. Cuenta corriente No 8883336667772</li>
+    </ul>
+  </div>
+</div> -->

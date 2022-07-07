@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { GenericService } from 'src/app/servicios/generic.service';
@@ -12,9 +13,10 @@ import { IntercomService } from 'src/app/servicios/itercom.service';
 export class HomeOwnerComponent implements OnInit {
 
   suscritions: Subscription[] = []
-  infoCartelera:string = ""
+  infoCartelera:SafeHtml = ""
   
-  constructor(private toastr: ToastrService, private connectHttp: GenericService, private intercom: IntercomService) {}
+  constructor(private toastr: ToastrService, private connectHttp: GenericService, 
+    private intercom: IntercomService, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
     this.loadInfoHead()
@@ -26,7 +28,7 @@ export class HomeOwnerComponent implements OnInit {
     }).subscribe(result => {
       if (!result.error) {
         this.intercom.announceHeadHomeUser(result.data.infoHeadHomeUser)
-        this.infoCartelera = result.data.infoCartelera
+        this.infoCartelera = this.sanitizer.bypassSecurityTrustHtml(result.data.infoCartelera)
       } else {
         this.toastr.error(result.msg);
       }
